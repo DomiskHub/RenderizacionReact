@@ -1,4 +1,6 @@
 import React from "react";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 const Buscador = ({ setCollaborators, BaseColaboradores }) => {
   const filtrar = (e) => {
@@ -14,7 +16,12 @@ const Buscador = ({ setCollaborators, BaseColaboradores }) => {
       });
     });
   };
-  return <input type="text" placeholder="Busca un colaborador" onChange={filtrar} />;
+
+  return (
+    <InputGroup className="mb-3 w-50">
+      <Form.Control placeholder="Busca un colaborador" onChange={filtrar} />
+    </InputGroup>
+  );
 };
 
 export default Buscador;

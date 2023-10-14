@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -60,17 +66,20 @@ main {
   text-transform: capitalize;
 }
 
-.alert .content p {
-  font-size: 18px;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.alert .content .button-row {
+.icon-warning {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin: 25px;
 }
 
-.alert .content .button-row button {
-  margin-bottom: 1rem;
+.boton-eliminar {
+  color: black;
 }
+
+.boton-eliminar:hover {
+  color: red;
+  background-color: rgb(207, 207, 207);
+  border-radius: 5px;
+}
+
+/* button */

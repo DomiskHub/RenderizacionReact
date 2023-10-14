@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
 import Alert from "./Alert";
 import AlertError from "./AlertError";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 const Formulario = ({ colaboradores, setCollaborators, BaseColaboradores }) => {
   const [nombre, setNombre] = useState("");
@@ -13,11 +16,27 @@ const Formulario = ({ colaboradores, setCollaborators, BaseColaboradores }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (nombre.length === 0) {
+    if (nombre === "") {
       setError(true);
       return;
     }
-    console.log("x");
+    if (email === "") {
+      setError(true);
+      return;
+    }
+    if (edad === "") {
+      setError(true);
+      return;
+    }
+    if (cargo === "") {
+      setError(true);
+      return;
+    }
+    if (telefono === "") {
+      setError(true);
+      return;
+    }
+
     const id = Date.now();
     const newCollaborator = { id, nombre, correo: email, edad, cargo, telefono };
     setCollaborators([...colaboradores, newCollaborator]);
@@ -33,18 +52,48 @@ const Formulario = ({ colaboradores, setCollaborators, BaseColaboradores }) => {
   const closeError = () => {
     setError(false);
   };
-
+  const closeShow = () => {
+    setShow(false);
+  };
+  const inputName = (e) => {
+    setNombre(e.target.value);
+  };
+  const inputEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const inputEdad = (e) => {
+    setEdad(e.target.value);
+  };
+  const inputCargo = (e) => {
+    setCargo(e.target.value);
+  };
+  const inputTelefono = (e) => {
+    setTelefono(e.target.value);
+  };
   return (
     <>
-      <form className="form" onSubmit={handleSubmit}>
-        <input type="text" placeholder="Ingresa tu Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
-        <input type="email" placeholder="Ingresa tu email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input type="number" placeholder="Ingresa tu edad" value={edad} onChange={(e) => setEdad(e.target.value)} />
-        <input type="text" placeholder="Ingresa tu cargo" value={cargo} onChange={(e) => setCargo(e.target.value)} />
-        <input type="tel" placeholder="Ingresa tu telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
-        <button type="submit">Agregar Colaborador</button>
-      </form>
-      <Alert nombre={nombre} show={show} setShow={setShow}></Alert>
+      <Form className="form" onSubmit={handleSubmit}>
+        <h3>Agregar colaborador</h3>
+        <InputGroup className="mb-1">
+          <Form.Control type="text" placeholder="Nombre del colaborador" value={nombre} onChange={inputName} />
+        </InputGroup>
+        <InputGroup className="mb-1">
+          <Form.Control type="email" placeholder="Email del colaborador" value={email} onChange={inputEmail} />
+        </InputGroup>
+        <InputGroup className="mb-1">
+          <Form.Control type="number" placeholder="Edad del colaborador" value={edad} onChange={inputEdad} />
+        </InputGroup>
+        <InputGroup className="mb-1">
+          <Form.Control type="text" placeholder="Cargo del colaborador" value={cargo} onChange={inputCargo} />
+        </InputGroup>
+        <InputGroup className="mb-1">
+          <Form.Control type="tel" placeholder="Teléfono del colaborador" value={telefono} onChange={inputTelefono} />
+        </InputGroup>
+        <Button className="w-100" type="submit" variant="primary">
+          Agregar Colaborador
+        </Button>
+      </Form>
+      <Alert nombre={nombre} show={show} closeShow={closeShow}></Alert>
       <AlertError error={error} closeError={closeError}></AlertError>
     </>
   );

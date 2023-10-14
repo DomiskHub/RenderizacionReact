@@ -9,9 +9,9 @@ function Listado({ colaboradores, BaseColaboradores, setCollaborators }) {
     });
   };
   return (
-    <Table responsive className="table">
+    <Table striped bordered hover responsive variant="light" className="table">
       <thead>
-        <tr>
+        <tr className="text-center">
           <th>Nombre</th>
           <th>Correo</th>
           <th>Edad</th>
@@ -22,16 +22,16 @@ function Listado({ colaboradores, BaseColaboradores, setCollaborators }) {
       </thead>
       <tbody>
         {colaboradores.map((colaborador) => (
-          <tr key={colaborador.id}>
+          <tr className="text-center" key={colaborador.id}>
             <td>{colaborador.nombre}</td>
             <td>{colaborador.correo}</td>
             <td>{colaborador.edad}</td>
             <td>{colaborador.cargo}</td>
             <td>{colaborador.telefono}</td>
             <td>
-              <Button variant="danger" onClick={() => eliminar(colaborador)}>
-                X
-              </Button>
+              <button class="btn btn-delete" onClick={() => eliminar(colaborador)}>
+                <span className="boton-eliminar"> 🐱‍👤 Eliminar</span>
+              </button>
             </td>
           </tr>
         ))}
