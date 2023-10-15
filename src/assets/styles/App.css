@@ -81,3 +81,20 @@ main {
   background-color: rgb(207, 207, 207);
   border-radius: 5px;
 }
+
+/* button */
+footer {
+  background-color: #000;
+  color: #fff; /* Texto blanco */
+  padding: 20px; /* Espacio alrededor del contenido del footer */
+  text-align: center; /* Centra el contenido del footer */
+  position: absolute; /* Fija el footer en la parte inferior de la ventana del navegador */
+  bottom: 0; /* Lo coloca en la parte inferior */
+  width: 100%; /* Ocupa todo el ancho de la ventana del navegador */
+}
+
+/* Opcional: Agrega estilos para que se vea más atractivo */
+footer p {
+  margin: 0; /* Elimina el margen predeterminado del párrafo en el footer */
+  font-size: 18px; /* Tamaño de fuente */
+}
