@@ -28,7 +28,7 @@ function Listado({ colaboradores, BaseColaboradores, setCollaborators }) {
             <td>{colaborador.cargo}</td>
             <td>{colaborador.telefono}</td>
             <td>
-              <button class="btn btn-delete" onClick={() => eliminar(colaborador)}>
+              <button className="btn btn-delete" onClick={() => eliminar(colaborador)}>
                 <span className="boton-eliminar"> 🐱‍👤 Eliminar</span>
               </button>
             </td>

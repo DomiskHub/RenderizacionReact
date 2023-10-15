@@ -1,7 +1,6 @@
 import Button from "react-bootstrap/Button";
 
 const AlertError = ({ error, closeError }) => {
-  console.log(error);
   return (
     <div className={`alert ${error ? "show" : ""}`}>
       <div className="content">
