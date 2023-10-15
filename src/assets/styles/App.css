@@ -1,85 +1,100 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
 * {
-  font-family: "Lato", sans-serif;
+	font-family: "Lato", sans-serif;
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	margin: 5rem;
 }
 
 .table {
-  min-width: 900px;
+	min-width: 900px;
 }
 .form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 .alert {
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
+	background: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
 }
 
 .alert.show {
-  visibility: visible;
+	visibility: visible;
 }
 
 .alert .content {
-  background: rgb(255, 255, 255);
-  padding: 2rem;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 10px;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: translateY(50%);
+	background: rgb(255, 255, 255);
+	padding: 2rem;
+	width: 90%;
+	max-width: 600px;
+	border-radius: 10px;
+	min-height: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transform: translateY(50%);
 }
 
 .alert.show .content {
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-  transform: translateY(0);
+	transition: all 0.2s ease-in-out;
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .alert .content h2 {
-  margin-bottom: 1.5rem;
-  text-transform: capitalize;
+	margin-bottom: 1.5rem;
+	text-transform: capitalize;
 }
 
 .icon-warning {
-  display: flex;
-  flex-direction: row;
-  margin: 25px;
+	display: flex;
+	flex-direction: row;
+	margin: 25px;
 }
 
 .boton-eliminar {
-  color: black;
+	color: black;
 }
 
 .boton-eliminar:hover {
-  color: red;
-  background-color: rgb(207, 207, 207);
-  border-radius: 5px;
+	color: red;
+	background-color: rgb(207, 207, 207);
+	border-radius: 5px;
 }
 
 /* button */
+footer {
+	background-color: #000;
+	color: #fff; /* Texto blanco */
+	padding: 20px; /* Espacio alrededor del contenido del footer */
+	text-align: center; /* Centra el contenido del footer */
+	position: absolute; /* Fija el footer en la parte inferior de la ventana del navegador */
+	bottom: 0; /* Lo coloca en la parte inferior */
+	width: 100%; /* Ocupa todo el ancho de la ventana del navegador */
+}
+
+/* Opcional: Agrega estilos para que se vea más atractivo */
+footer p {
+	margin: 0; /* Elimina el margen predeterminado del párrafo en el footer */
+	font-size: 18px; /* Tamaño de fuente */
+}
