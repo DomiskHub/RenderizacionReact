@@ -1,1 +1,1 @@
-# Trabaje colaborativamente con Chesi.
+# Trabaje colaborativamente con Chesi y Daniela.
